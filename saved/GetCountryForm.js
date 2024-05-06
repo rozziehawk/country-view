@@ -1,8 +1,9 @@
 import DisplayCountry from './DisplayCountry';
 import { useNavigate } from "react-router-dom";
+//const { getCode, getName } = require('country-list');
 
 import React, { useState, useEffect } from "react";
-import axios from "axios"
+import axios from "axios";
 
 const BASE_API_URL = "https://restcountries.com/v3.1/name/";
 const API_ARGS = "?fullText=true";
@@ -12,16 +13,7 @@ const GetCountryForm = () => {
 
   const navigate = useNavigate();
 
-  /*function getCountryInfo(country) {
 
-        // get the lists of items from the memu api and set them as state variable
-    let countryData = CountryInfo.getCountryInfo();
-
-    //setCountry(country);
-   
-    //setIsLoading(false);
-    return countryData;
-  }*/
     
     const [country, setCountry] = useState("Barbados");
     const [data, setData] = useState(null);

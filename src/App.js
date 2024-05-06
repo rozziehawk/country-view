@@ -10,7 +10,7 @@ function App() {
   
   const [isLoading, setIsLoading] = useState(true);
   const [country, setCountry] = useState({});
-  const [data, setData] = useState(null);
+  //const [data, setData] = useState(null);
   /*
   useEffect(() => {
     async function getCountryInfo(country) {
@@ -29,8 +29,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/Display' element={<DisplayCountry />} country={country} />
+          <Route exact path='/' element={<Home setCountry={setCountry} country={country} />}/>
+          <Route exact path='/Display' element={<DisplayCountry country={country} />}/>
         </Routes>
       </BrowserRouter>
     </div>

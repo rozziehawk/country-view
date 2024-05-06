@@ -2,13 +2,14 @@ import DisplayCountry from './DisplayCountry';
 import { useNavigate } from "react-router-dom";
 
 import React, { useState, useEffect } from "react";
+import App from "./App";
 
 
 const BASE_API_URL = "https://restcountries.com/v3.1/name/";
 const API_ARGS = "?fullText=true";
 //import CountryInfo from './CountryInfo';
 
-const GetCountryForm = () => {
+const GetCountryForm = ({ country, setCountry }) => {
 
   const navigate = useNavigate();
 
@@ -23,7 +24,7 @@ const GetCountryForm = () => {
     return countryData;
   }*/
     
-    const [country, setCountry] = useState("Barbados");
+    //const [country, setCountry] = useState("Barbados");
     //const [data, setData] = useState(null);
 
 
@@ -37,15 +38,9 @@ const GetCountryForm = () => {
     
     
     alert(`Country Name, ${country}`);
-    //let countryData = getCountryInfo(country);
+    
     setCountry(country);
-    /*return (
-      <div className="DisplayCountry">
-        <DisplayCountry />
-      </div>
-      )
-    //setCountry("");
-    */
+  
     navigate('/Display', {country});
   }
 

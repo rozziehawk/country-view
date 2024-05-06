@@ -9,13 +9,13 @@ const BASE_API_URL = "https://restcountries.com/v3.1/name/";
 const API_ARGS = "?fullText=true";
 
 
-const DisplayCountry = () => 
+const DisplayCountry = ({country}) => 
 {
     const navigate = useNavigate();
 
      
-      const [country, setCountry] = useState("Barbados");
-      const [data, setData] = useState(null);
+      //const [country, setCountry] = useState("Barbados");
+      const [countryInfo, setCountryInfo] = useState(null);
   
       useEffect(() => {
         async function getCountryInfo() {
@@ -24,22 +24,60 @@ const DisplayCountry = () =>
   
           //country = await CountryInfo.getCountryInfo();
   
-        
-          await axios.get(`${BASE_API_URL}/${country}${API_ARGS}`).then(res =>{ 
-          setData(res.data)
-        });
-        
-          
+
+            await axios.get(`${BASE_API_URL}/${country}${API_ARGS}`).then(res =>{ 
+            const countryInfo = new CountryInfo(res.data);
+            setCountryInfo(countryInfo);
+            });
         }
+
         getCountryInfo();
+        
         
       }, [country]);
   
      
-    if (data)
+    if (countryInfo)
     {
-        return(
+       /* return(
             <h1>You have chosen {data[0]['name']['common']}</h1>
+        )*/
+        return (
+            <div>
+            <table>
+                <tr>
+                    <td colspan="3"><h1>{countryInfo.nameCommon}</h1></td>
+                    <td colspan="3" rowspan="3"><img src={countryInfo.flag} /></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><h1>Official Name: {countryInfo.nameOfficial}</h1></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><h2>Continent: {countryInfo.continents[0]}</h2></td>
+                </tr>
+                <tr>
+                    <td><h4>Region: {countryInfo.region}</h4></td>
+                    <td>&nbsp;</td>
+                    <td><h4>Sub-region: {countryInfo.subRegion}</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Capital: {countryInfo.capital}</h4></td>
+                    <td>&nbsp;</td>
+                    <td><h4>Language(s) Spoken: {countryInfo.languages[0][1]}</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Currency: ({countryInfo.currencies[0][0]}) {countryInfo.currencies[0][1].name}</h4></td>
+                    <td>&nbsp;</td>
+                    <td><h4>Symbol: {countryInfo.currencies[0][1].symbol}</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Population: {countryInfo.population}</h4></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr><td colspan="3"><a href="/">Search another country</a></td></tr>
+            </table>
+            </div>
         )
     }
     else

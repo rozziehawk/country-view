@@ -1,9 +1,9 @@
 import GetCountryForm from './GetCountryForm';
 
-function Home() {
+function Home({ country, setCountry }) {
   return (
     <div>
-      <GetCountryForm />
+      <GetCountryForm  setCountry={setCountry} country={country} />
     </div>
   );
 }
