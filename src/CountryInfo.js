@@ -26,10 +26,12 @@ class CountryInfo {
           this.languages = [];
           this.currencies = [];
           let objLanguages = data[0].languages;
-          this.languages = Object.keys(objLanguages).map((key) => [key, objLanguages[key]]);
+          this.languages = Object.keys(objLanguages).map((key) => [objLanguages[key]]);
           //likewise with currencies
           let objCurrencies = data[0].currencies;
-          this.currencies = Object.keys(objCurrencies).map((key) => [key, objCurrencies[key]]);
+          let arrayCurrencies = Object.keys(objCurrencies).map((key) => [key, objCurrencies[key]]);
+          this.currencyCode = arrayCurrencies[0][0];
+          this.currencies = Object.keys(objCurrencies).map((key) => [objCurrencies[key]]);
 
           this.population = data[0].population;
       }

@@ -53,7 +53,7 @@ const DisplayCountry = ({country}) =>
                     <td colspan="3"><h1>Official Name: {countryInfo.nameOfficial}</h1></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><h2>Continent: {countryInfo.continents[0]}</h2></td>
+                    <td colspan="3"><h2>Continent(s): {countryInfo.continents.join(', ')}</h2></td>
                 </tr>
                 <tr>
                     <td><h4>Region: {countryInfo.region}</h4></td>
@@ -63,12 +63,12 @@ const DisplayCountry = ({country}) =>
                 <tr>
                     <td><h4>Capital: {countryInfo.capital}</h4></td>
                     <td>&nbsp;</td>
-                    <td><h4>Language(s) Spoken: {countryInfo.languages[0][1]}</h4></td>
+                    <td><h4>Language(s) Spoken: {countryInfo.languages.join(', ')}</h4></td>
                 </tr>
                 <tr>
-                    <td><h4>Currency: ({countryInfo.currencies[0][0]}) {countryInfo.currencies[0][1].name}</h4></td>
+                    <td><h4>Currency: ({countryInfo.currencyCode}) {countryInfo.currencies[0][0].name}</h4></td>
                     <td>&nbsp;</td>
-                    <td><h4>Symbol: {countryInfo.currencies[0][1].symbol}</h4></td>
+                    <td><h4>Symbol: {countryInfo.currencies[0][0].symbol}</h4></td>
                 </tr>
                 <tr>
                     <td><h4>Population: {countryInfo.population}</h4></td>
