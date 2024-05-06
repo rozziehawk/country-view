@@ -37,7 +37,7 @@ const GetCountryForm = ({ country, setCountry }) => {
     e.preventDefault();
     
     
-    alert(`Country Name, ${country}`);
+    //alert(`Country Name, ${country}`);
     
     setCountry(country);
   
