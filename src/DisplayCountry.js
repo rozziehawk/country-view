@@ -21,16 +21,19 @@ const DisplayCountry = ({country}) =>
       useEffect(() => {
         async function getCountryInfo() {
           // get the lists of items from the memu api and set them as state variable
-          //let country = await CountryInfo.getCountryInfo();
-  
-          //country = await CountryInfo.getCountryInfo();
+            try{
             await axios.get(`${BASE_API_URL}/${country}${API_ARGS}`).then(res =>{ 
-            const countryInfo = new CountryInfo(res.data);
-            setCountryInfo(countryInfo);
-
+                const countryInfo = new CountryInfo(res.data);
+                setCountryInfo(countryInfo);
+            });
             }
-        
-        );
+            catch(error)
+            {
+                console.log('Error');
+                return (
+                    <h1>Country not found</h1>
+                )
+            }
         
     }   
         getCountryInfo();
@@ -82,10 +85,19 @@ const DisplayCountry = ({country}) =>
             </div>
         )
     }
-    else
+    else if (typeof error === 'undeined')
     {
         return (
             <h1>Loading....</h1>
+        )
+    }
+    else
+    {
+        return(
+            <>
+            <h1>Country <i>{country}</i> not found.</h1>
+            <a href="/">Search another country</a>
+            </>
         )
     }
     
