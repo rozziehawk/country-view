@@ -1,5 +1,6 @@
 import React, { useState,  useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+//import addCommas from './addCommas'
 
 import axios from "axios";
 import CountryInfo from './CountryInfo';

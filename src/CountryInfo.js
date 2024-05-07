@@ -1,4 +1,4 @@
-
+import addCommas from './addCommas';
 
 class CountryInfo {
 
@@ -33,7 +33,10 @@ class CountryInfo {
           this.currencyCode = arrayCurrencies[0][0];
           this.currencies = Object.keys(objCurrencies).map((key) => [objCurrencies[key]]);
 
-          this.population = data[0].population;
+          // convert population to string with commas for easier viewing...
+          let sPop = data[0].population.toString();
+          this.population = addCommas(sPop);
+          //this.population = data[0].population;
       }
         
     } // end of constructor

@@ -1,9 +1,10 @@
 import DisplayCountry from './DisplayCountry';
 import { useNavigate } from "react-router-dom";
+import {getCode, getNames} from "country-list";
 
 import React, { useState, useEffect } from "react";
 import App from "./App";
-
+//import buildCountryDropDown from 'BuildCountryDropDown'
 
 const BASE_API_URL = "https://restcountries.com/v3.1/name/";
 const API_ARGS = "?fullText=true";
@@ -26,8 +27,10 @@ const GetCountryForm = ({ country, setCountry }) => {
     
     //const [country, setCountry] = useState("Barbados");
     //const [data, setData] = useState(null);
-
-
+    // build counries dropdown menu
+    const countries = getNames();
+    //const ddCountries = buildCountryDropDown(countries);
+    console.log(countries);
     const handleChange = (e) => {
     setCountry(e.target.value);
     }
