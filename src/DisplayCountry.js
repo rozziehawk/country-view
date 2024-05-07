@@ -13,10 +13,10 @@ const API_ARGS = "?fullText=true";
 const DisplayCountry = ({country}) => 
 {
     const navigate = useNavigate();
-
-     
+   
       //const [country, setCountry] = useState("Barbados");
       const [countryInfo, setCountryInfo] = useState(null);
+      const [notFound, setNotFound] = useState(false);
   
       useEffect(() => {
         async function getCountryInfo() {
@@ -29,6 +29,7 @@ const DisplayCountry = ({country}) =>
             }
             catch(error)
             {
+                setNotFound(true);
                 console.log('Error');
                 return (
                     <h1>Country not found</h1>
@@ -85,7 +86,7 @@ const DisplayCountry = ({country}) =>
             </div>
         )
     }
-    else if (typeof error === 'undeined')
+    else if (!notFound)
     {
         return (
             <h1>Loading....</h1>
