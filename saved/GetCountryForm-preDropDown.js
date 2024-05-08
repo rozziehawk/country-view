@@ -14,7 +14,19 @@ const GetCountryForm = ({ country, setCountry }) => {
 
   const navigate = useNavigate();
 
+  /*function getCountryInfo(country) {
 
+        // get the lists of items from the memu api and set them as state variable
+    let countryData = CountryInfo.getCountryInfo();
+
+    //setCountry(country);
+   
+    //setIsLoading(false);
+    return countryData;
+  }*/
+    
+    //const [country, setCountry] = useState("Barbados");
+    //const [data, setData] = useState(null);
     // build counries dropdown menu
     const countries = getNames();
     const ddCountries = buildCountryDropDown(countries);
@@ -37,11 +49,20 @@ const GetCountryForm = ({ country, setCountry }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="country">Country</label>
-      <select name="country" id="country" value={country} onChange={handleChange}>
+      <label htmlFor="ddcountry">Country</label>
+      <select name="ddcountry" value={country} onChange={handleChange}>
        {ddCountries}
       </select>
- 
+      <input
+        id="country"
+        type="text"
+        name="country"
+        placeholder="Country"
+        value={country}
+        onChange={handleChange}
+      />
+
+     
       <button>Get Country</button>
     </form>
   )
