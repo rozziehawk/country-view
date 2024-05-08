@@ -9,21 +9,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 function App() {
   
   const [isLoading, setIsLoading] = useState(true);
-  const [country, setCountry] = useState({});
-  //const [data, setData] = useState(null);
-  /*
-  useEffect(() => {
-    async function getCountryInfo(country) {
-      // get the lists of items from the memu api and set them as state variable
-      let country = await CountryInfo.getCountryInfo();
-
-      setCountry(country);
-     
-      setIsLoading(false);
-    }
-    getCountryInfo(country);
-  }, []);
-  */
+  const [country, setCountry] = useState("Afghanistan");
+  
 
   return (
     <div className="App">

@@ -12,13 +12,22 @@ const API_ARGS = "?fullText=true";
 
 const GetCountryForm = ({ country, setCountry }) => {
 
+  const [ddCountries, setDDCountries] = useState(null);
+  useEffect(() => {
+    const countriesList = getNames();
+    setDDCountries(buildCountryDropDown(countriesList));
+  }, []);
+  
+
   const navigate = useNavigate();
 
 
     // build counries dropdown menu
+    /*
     const countries = getNames();
     const ddCountries = buildCountryDropDown(countries);
     console.log(countries);
+    */
     const handleChange = (e) => {
     setCountry(e.target.value);
     }
@@ -35,6 +44,7 @@ const GetCountryForm = ({ country, setCountry }) => {
     navigate('/Display', {country});
   }
 
+ 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="country">Country</label>
