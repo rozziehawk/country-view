@@ -23,14 +23,34 @@ function buildCountryDropDown(countries)
          {
             value = "Democratic Republic of the Congo";
          }
-         else if (iComma > 0)
+            else if (country.substring(0, 16) == "Falkland Islands")
+         {
+          value = "Falkland Islands";
+         }
+         else if (country.substring(0, 6) == "Brunei")
+         {
+          value = "Brunei";
+         } 
+         else if (country.substring(0, 8) == "Holy See")
+         {
+            value = "Vatican City";
+         } 
+         else if (country.substring(0, 12) == "Sint Maarten")
+         {
+            value = "Sint Maarten";
+         } 
+         else if (country.substring(0, 12) == "Saint Helena")
+         {
+            value = country; // leave the whole thing
+         } 
+         else if (iComma > 0) // catch-all for countries whose official name is bass-ackwards with comma... flip it around.
          {
             value = country.substring(iComma + 2, length) + " " + country.substring(0, iComma);
          }
          else
-        {
-            value = country;
-        }
+         {
+             value = country;
+         }
         jsxCountries.push(<option value={value}>{country}</option>)
     }
     
