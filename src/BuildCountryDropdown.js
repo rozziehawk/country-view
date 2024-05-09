@@ -57,18 +57,30 @@ function buildCountryDropDown(countries)
          {
             value = "French Southern and Antarctic Lands"; 
          }
-         else if (country.substring(0,6) == "Bouvet") // Don't know why this doesn't work
-         {
-            value = "Bouvet Island";
-         }
-         else if (iComma > 0) // catch-all for countries whose official name is bass-ackwards with comma... flip it around.
-         {
+        else if (country.substring(0,5) == "Macao") 
+        {
+            value = "Macau"; //alternate spelling needed for API
+        }
+        else if (country.substring(0,5) == "Macao") 
+        {
+            value = "Macau"; //alternate spelling needed for API
+        }
+        else if (country.substring(0,20) == "Virgin Islands, U.S.") 
+        {
+            value = "United States Virgin Islands"; 
+        }
+        else if (iComma > 0) // catch-all for countries whose official name is bass-ackwards with comma... flip it around.
+        {
             value = country.substring(iComma + 2, length) + " " + country.substring(0, iComma);
-         }
-         else
-         {
+        }
+        else if (country.substring(0,7) == "Türkiye") 
+        {
+            value = "Turkey"; // I think this is what this means.
+        }
+        else
+        {
              value = country;
-         }
+        }
         jsxCountries.push(<option value={value}>{country}</option>)
     }
     
