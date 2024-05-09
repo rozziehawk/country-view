@@ -64,7 +64,7 @@ const DisplayCountry = ({country}) =>
                 <tr>
                     <td><h4>Region: {countryInfo.region}</h4></td>
                     <td>&nbsp;</td>
-                    <td><h4>Sub-region: {countryInfo.subRegion}</h4></td>
+                    <td><h4>Sub-region: {countryInfo.subregion}</h4></td>
                 </tr>
                 <tr>
                     <td><h4>Capital: {countryInfo.capital.join(', ')}</h4></td>

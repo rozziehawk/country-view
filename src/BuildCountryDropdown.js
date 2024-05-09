@@ -43,6 +43,24 @@ function buildCountryDropDown(countries)
          {
             value = country; // leave the whole thing
          } 
+         else if (country.substring(0, 10) == "Cabo Verde")
+         {
+            country = "Cape Verde"
+            value = "Cape Verde"; 
+         }  
+         else if (country.substring(0, 13) == "Côte d'Ivoire")
+         {
+            country = "Ivory Coast"
+            value = "Ivory Coast"; 
+         } 
+         else if (country.substring(0, 27) == "French Southern Territories")
+         {
+            value = "French Southern and Antarctic Lands"; 
+         }
+         else if (country.substring(0,6) == "Bouvet") // Don't know why this doesn't work
+         {
+            value = "Bouvet Island";
+         }
          else if (iComma > 0) // catch-all for countries whose official name is bass-ackwards with comma... flip it around.
          {
             value = country.substring(iComma + 2, length) + " " + country.substring(0, iComma);

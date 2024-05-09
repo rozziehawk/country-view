@@ -24,7 +24,7 @@ const DisplayCountry = ({country}) =>
   
           //country = await CountryInfo.getCountryInfo();
   
-        
+          console.log("country = " + country);
           await axios.get(`${BASE_API_URL}/${country}${API_ARGS}`).then(res =>{ 
           setData(res.data)
         });
