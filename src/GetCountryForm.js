@@ -48,8 +48,9 @@ const GetCountryForm = ({ country, setCountry }) => {
   return (
     /*<div style={{z-index: 5}}>*/
     <div>
-      <h1>Choose a country to explore</h1>
-    <form onSubmit={handleSubmit}>
+      <h1>Karl's cool app to learn basic info about countries of the world</h1>
+      <h2>Choose a country to explore</h2>
+      <form onSubmit={handleSubmit}>
       <label htmlFor="country">Country</label>
       <select name="country" id="country" value={country} onChange={handleChange}>
        {ddCountries}
