@@ -55,4 +55,9 @@
   bottom: 0px;
   left: 0px;
   opacity: 0.30;
+  z-index: 1;
+}
+.topcontainer {
+  position: relative;
+  z-index: 2;
 }
