@@ -46,6 +46,9 @@ const GetCountryForm = ({ country, setCountry }) => {
 
  
   return (
+    /*<div style={{z-index: 5}}>*/
+    <div>
+      <h1>Choose a country to explore</h1>
     <form onSubmit={handleSubmit}>
       <label htmlFor="country">Country</label>
       <select name="country" id="country" value={country} onChange={handleChange}>
@@ -54,6 +57,7 @@ const GetCountryForm = ({ country, setCountry }) => {
  
       <button>Get Country</button>
     </form>
+    </div>
   )
 }
 
