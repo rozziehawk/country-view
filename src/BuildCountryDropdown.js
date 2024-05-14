@@ -34,6 +34,7 @@ function buildCountryDropDown(countries)
          else if (country.substring(0, 8) == "Holy See")
          {
             value = "Vatican City";
+            country = "Holy See (Vatican City)";
          } 
          else if (country.substring(0, 12) == "Sint Maarten")
          {
