@@ -62,10 +62,6 @@ function buildCountryDropDown(countries)
         {
             value = "Macau"; //alternate spelling needed for API
         }
-        else if (country.substring(0,5) == "Macao") 
-        {
-            value = "Macau"; //alternate spelling needed for API
-        }
         else if (country.substring(0,20) == "Virgin Islands, U.S.") 
         {
             value = "United States Virgin Islands"; 
