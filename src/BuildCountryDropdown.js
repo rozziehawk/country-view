@@ -74,6 +74,11 @@ function buildCountryDropDown(countries)
         {
             value = "Turkey"; // I think this is what this means.
         }
+        else if (country.substring(0,8) == "Viet Nam") 
+         {
+             value = "Vietnam"; // How the API wants this. Google shows the country name as one word.
+             country = "Vietnam";
+         }
         else
         {
              value = country;
