@@ -57,8 +57,8 @@ const DisplayCountry = ({country}) =>
                     <h5 className="card-text">Official Name:</h5>
                     <h4 className="card-text">{countryInfo.nameOfficial}</h4>
                     <p className="card-text text-wrap">Continent(s): {countryInfo.continents.join(', ')}<br/>
-                    Region: {countryInfo.region}, &nbsp;Subregion: {countryInfo.subregion}</p>
-                    <p className="card-text text-wrap">Capital: {countryInfo.capital.join(', ')}</p>
+                    Region: {countryInfo.region}, &nbsp;Subregion: {countryInfo.subregion}<br/>
+                    Capital: {countryInfo.capital.join(', ')}</p>
                     <p className="card-text text-wrap">Language(s) Spoken: {countryInfo.languages.join(', ')}</p>
                     <p className="card-text text-wrap">Currency: ({countryInfo.currencyCode}) {countryInfo.currencies[0][0].name}&nbsp;
                     (<b>{countryInfo.currencies[0][0].symbol}</b>)</p>
@@ -67,43 +67,7 @@ const DisplayCountry = ({country}) =>
                     <a href="/" className="btn btn-primary">Search another country</a>
                 </div>
             </div>
-
-/*
-            <table>
-                <tr>
-                    <td colspan="3"><h1>{countryInfo.nameCommon}</h1></td>
-                    <td colspan="3" rowspan="3"><img src={countryInfo.flag} /></td>
-                </tr>
-                <tr>
-                    <td colspan="3"><h1>Official Name: {countryInfo.nameOfficial}</h1></td>
-                </tr>
-                <tr>
-                    <td colspan="3"><h2>Continent(s): {countryInfo.continents.join(', ')}</h2></td>
-                </tr>
-                <tr>
-                    <td><h4>Region: {countryInfo.region}</h4></td>
-                    <td>&nbsp;</td>
-                    <td><h4>Sub-region: {countryInfo.subregion}</h4></td>
-                </tr>
-                <tr>
-                    <td><h4>Capital: {countryInfo.capital.join(', ')}</h4></td>
-                    <td>&nbsp;</td>
-                    <td><h4>Language(s) Spoken: {countryInfo.languages.join(', ')}</h4></td>
-                </tr>
-                <tr>
-                    <td><h4>Currency: ({countryInfo.currencyCode}) {countryInfo.currencies[0][0].name}</h4></td>
-                    <td>&nbsp;</td>
-                    <td><h4>Symbol: {countryInfo.currencies[0][0].symbol}</h4></td>
-                </tr>
-                <tr>
-                    <td><h4>Population: {countryInfo.population}</h4></td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr><td colspan="3" ><a href="/" class="btn btn-primary">Search another country</a></td></tr>
-            </table>
-        */
-            
+    
         )
     }
     else if (!notFound)
