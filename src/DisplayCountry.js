@@ -55,14 +55,14 @@ const DisplayCountry = ({country}) =>
                 <div class="card-body">
                     <h2 className="card-title">{countryInfo.nameCommon}</h2>
                     <h5 className="card-text">Official Name:</h5>
-                    <h3 className="card-text">{countryInfo.nameOfficial}</h3>
-                    <p>Continent(s): {countryInfo.continents.join(', ')}</p>
-                    <p>Region: {countryInfo.region}<br/>Subregion: {countryInfo.subregion}</p>
-                    <p>Capital: {countryInfo.capital.join(', ')}</p>
+                    <h4 className="card-text">{countryInfo.nameOfficial}</h4>
+                    <p className="card-text text-wrap">Continent(s): {countryInfo.continents.join(', ')}<br/>
+                    Region: {countryInfo.region}, &nbsp;Subregion: {countryInfo.subregion}</p>
+                    <p className="card-text text-wrap">Capital: {countryInfo.capital.join(', ')}</p>
                     <p className="card-text text-wrap">Language(s) Spoken: {countryInfo.languages.join(', ')}</p>
-                    <p>Currency: ({countryInfo.currencyCode}) {countryInfo.currencies[0][0].name}&nbsp;
+                    <p className="card-text text-wrap">Currency: ({countryInfo.currencyCode}) {countryInfo.currencies[0][0].name}&nbsp;
                     (<b>{countryInfo.currencies[0][0].symbol}</b>)</p>
-                    <p>Population: {countryInfo.population}</p>
+                    <p className="card-text text-wrap">Population: {countryInfo.population}</p>
                     <hr/>
                     <a href="/" className="btn btn-primary">Search another country</a>
                 </div>
