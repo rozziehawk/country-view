@@ -8,6 +8,7 @@ import './DisplayCountry.css';
 
 const BASE_API_URL = "https://restcountries.com/v3.1/name/";
 const API_ARGS = "?fullText=true";
+const CARD_WIDTH = 400;
 
 
 const DisplayCountry = ({country}) => 
@@ -49,21 +50,21 @@ const DisplayCountry = ({country}) =>
             <h1>You have chosen {data[0]['name']['common']}</h1>
         )*/
         return (
-            <div class="card">
-                <img src={countryInfo.flag} class="card-img-top"/>
+            <div className="card w-30" style={{width: CARD_WIDTH}}>
+                <img src={countryInfo.flag} className="card-img-top"/>
                 <div class="card-body">
-                    <h2 class="card-title">{countryInfo.nameCommon}</h2>
-                    <h5 class="card-text">Official Name:</h5>
-                    <h3 class="card-text">{countryInfo.nameOfficial}</h3>
+                    <h2 className="card-title">{countryInfo.nameCommon}</h2>
+                    <h5 className="card-text">Official Name:</h5>
+                    <h3 className="card-text">{countryInfo.nameOfficial}</h3>
                     <p>Continent(s): {countryInfo.continents.join(', ')}</p>
                     <p>Region: {countryInfo.region}<br/>Subregion: {countryInfo.subregion}</p>
                     <p>Capital: {countryInfo.capital.join(', ')}</p>
-                    <p>Language(s) Spoken: {countryInfo.languages.join(', ')}</p>
+                    <p className="card-text text-wrap">Language(s) Spoken: {countryInfo.languages.join(', ')}</p>
                     <p>Currency: ({countryInfo.currencyCode}) {countryInfo.currencies[0][0].name}&nbsp;
                     (<b>{countryInfo.currencies[0][0].symbol}</b>)</p>
                     <p>Population: {countryInfo.population}</p>
                     <hr/>
-                    <a href="/" class="btn btn-primary">Search another country</a>
+                    <a href="/" className="btn btn-primary">Search another country</a>
                 </div>
             </div>
 
