@@ -56,7 +56,7 @@ const GetCountryForm = ({ country, setCountry }) => {
        {ddCountries}
       </select>
  
-      <button>Get Country</button>
+      <button class="btn btn-primary btn-sm">Get Country</button>
     </form>
     </div>
   )
