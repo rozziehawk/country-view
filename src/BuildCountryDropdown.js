@@ -23,7 +23,7 @@ function buildCountryDropDown(countries)
          {
             value = "Democratic Republic of the Congo";
          }
-            else if (country.substring(0, 16) == "Falkland Islands")
+         else if (country.substring(0, 16) == "Falkland Islands")
          {
           value = "Falkland Islands";
          }

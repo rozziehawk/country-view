@@ -50,7 +50,12 @@ const DisplayCountry = ({country}) =>
             <h1>You have chosen {data[0]['name']['common']}</h1>
         )*/
         return (
-            <div className="card w-30" style={{width: CARD_WIDTH}}>
+            
+                <div className="row">
+             
+                <div className="col-4"></div>
+                <div className="col-4">
+                <div className="card"> 
                 <img src={countryInfo.flag} className="card-img-top"/>
                 <div class="card-body">
                     <h2 className="card-title">{countryInfo.nameCommon}</h2>
@@ -66,6 +71,10 @@ const DisplayCountry = ({country}) =>
                     <hr/>
                     <a href="/" className="btn btn-primary">Search another country</a>
                 </div>
+                </div>
+                <div className="col-4"></div>
+                </div>
+            
             </div>
     
         )
