@@ -53,8 +53,8 @@ const DisplayCountry = ({country}) =>
             
                 <div className="row">
              
-                <div className="col-4"></div>
-                <div className="col-4">
+                <div className="col-12 col-md-6 col-lg-4"></div>
+                <div className="col-12 col-md-6 col-lg-4">
                 <div className="card"> 
                 <img src={countryInfo.flag} className="card-img-top"/>
                 <div class="card-body">
