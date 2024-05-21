@@ -46,9 +46,9 @@ const GetCountryForm = ({ country, setCountry }) => {
 
  
   return (
-    /*<div style={{z-index: 5}}>*/
-    <div>
+      <div className="row">
       <h1>Karl's cool app to learn basic info about countries of the world</h1>
+      <br/><br/><br/><br/>
       <h2>Choose a country to explore</h2>
       <form onSubmit={handleSubmit}>
       <label htmlFor="country">Country</label>
@@ -56,7 +56,7 @@ const GetCountryForm = ({ country, setCountry }) => {
        {ddCountries}
       </select>
  
-      <button className="btn btn-primary btn-sm">Get Country</button>
+      <button class="btn btn-primary btn-sm">Get Country</button>
     </form>
     </div>
   )
