@@ -8,7 +8,6 @@ import buildCountryDropDown from './BuildCountryDropdown'
 
 const BASE_API_URL = "https://restcountries.com/v3.1/name/";
 const API_ARGS = "?fullText=true";
-//import CountryInfo from './CountryInfo';
 
 const GetCountryForm = ({ country, setCountry }) => {
 
@@ -21,13 +20,7 @@ const GetCountryForm = ({ country, setCountry }) => {
 
   const navigate = useNavigate();
 
-
-    // build counries dropdown menu
-    /*
-    const countries = getNames();
-    const ddCountries = buildCountryDropDown(countries);
-    console.log(countries);
-    */
+ 
     const handleChange = (e) => {
     setCountry(e.target.value);
     }
@@ -37,8 +30,7 @@ const GetCountryForm = ({ country, setCountry }) => {
     e.preventDefault();
     
     
-    //alert(`Country Name, ${country}`);
-    
+        
     setCountry(country);
   
     navigate('/Display', {country});
@@ -46,6 +38,7 @@ const GetCountryForm = ({ country, setCountry }) => {
 
  
   return (
+    // display inputs using Bootstrap grid
       <div className="row">
       <h1>Karl's cool app to learn basic info about countries of the world</h1>
       <br/><br/><br/><br/>
