@@ -51,15 +51,7 @@ const GetCountryForm = ({ country, setCountry }) => {
  
       <button className="btn btn-primary btn-sm">Get Country</button>
     </form>
-    <footer className="bg-body-tertiary text-center text-lg-start fixed-bottom">
-    // Copyright 
-     <div className="text-center p-3" style={{background-color: "rgba(0, 0, 0, 0.05)";}}>
-       © 2024 Copyright:
-       <a className="text-body" href="https://chezhawk.com/">Karl Haakonsen</a>
-     </div>
-     // Copyright
-   </footer>
-
+ 
     </div>
 
   )
