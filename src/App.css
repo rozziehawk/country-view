@@ -9,6 +9,7 @@
 
 body {
   padding-top: 54px;
+  /*padding-bottom: 100px;*/
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -68,4 +69,5 @@ body {
 .my-footer {
   background-color: rgba(0, 0, 0, 0.05);
   z-index: 5;
+  padding-bottom: 100px;
 }
