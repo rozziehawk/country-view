@@ -44,23 +44,37 @@
         <a class="navbar-brand mb-0 h1" href="/">Country Viewer</a>
         <!--<div class="d-flex justify-content-end">-->
           <!-- Navbar dropdown here-->
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="dropdown">
+            <!--<button class="btn btn-primary dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#navbar"" aria-expanded="true"> -->
+          <button class="navbar-toggler dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#navbar">
               Tools Used
-            </button>
-            <ul class="dropdown-menu">
+          </button>
+            <!--<button class="btn btn-primary dropdown-toggle" id="tools-list" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tools Used
+            </button>-->
+            <div class="navbar-collapse collapse" id="navbar"></div>
+            <ul class="dropdown-menu" id="tools-list">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
             </ul>
+            </div>
           </div>
           <!-- end of Navbar Dropdown definition-->
         <!--</div> -->
       </div>
     </nav>
-   
+              
+
+
+
+               
+          </div>
+
+          <!-- End of navbar dropdown code-->
+        </div> <!-- d-flex -->
+      </div>
+    </nav>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div  class="container topcontainer" id="root">
   
@@ -76,13 +90,7 @@
     -->
 
      <!--</div>-->
-     <!-- Footer -->
-
-     <!-- Footer -->
-     </div>
-   <!--</div> Not sure what div this is closing for now--> 
-   
-
+    </container>
     <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>-->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"/>
   </body>
