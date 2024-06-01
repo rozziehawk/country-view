@@ -5,6 +5,8 @@ import CountryInfo from './CountryInfo'
 import DisplayCountry from './DisplayCountry';
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Footer from './Footer';
+import Header from './Header';
 
 function App() {
   
@@ -15,10 +17,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Header/>
         <Routes>
           <Route exact path='/' element={<Home setCountry={setCountry} country={country} />}/>
           <Route exact path='/Display' element={<DisplayCountry country={country} />}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
