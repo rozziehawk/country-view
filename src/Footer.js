@@ -7,7 +7,7 @@ const Footer = () => {
  
     <div className="my-footer text-center p-3">
       © 2024 Copyright:
-      <a className="text-body" href="https://chezhawk.com/">Karl Haakonsen</a>
+      <a className="text-body" href="https://chezhawk.com/">Karl S. Haakonsen</a>
     </div>
   
     </footer>
