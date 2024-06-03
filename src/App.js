@@ -5,6 +5,7 @@ import CountryInfo from './CountryInfo'
 import DisplayCountry from './DisplayCountry';
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import 'bootstrap';
 import Footer from './Footer';
 import Header from './Header';
 
