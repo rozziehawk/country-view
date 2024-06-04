@@ -50,9 +50,10 @@ const DisplayCountry = ({country}) =>
             <h1>You have chosen {data[0]['name']['common']}</h1>
         )*/
         return (
+            /* Use Bootstrap responsive grid and card to display results */
             
                 <div className="row">
-             
+                            
                 <div className="col-12 col-md-6 col-lg-4"></div>
                 <div className="col-12 col-md-6 col-lg-4">
                 <div className="card"> 
@@ -74,7 +75,14 @@ const DisplayCountry = ({country}) =>
                 </div>
                 <div className="col-4"></div>
                 </div>
-            
+                <footer className="bg-body-tertiary text-center text-lg-start fixed-bottom">
+ 
+                    <div className="my-footer text-center p-3">
+                        © 2024 Copyright:
+                        <a className="text-body" href="https://chezhawk.com/">Karl Haakonsen</a>
+                    </div>
+
+                </footer>
             </div>
     
         )
