@@ -18,10 +18,14 @@ const DisplayCountry = ({country}) =>
       //const [country, setCountry] = useState("Barbados");
       const [countryInfo, setCountryInfo] = useState(null);
       const [notFound, setNotFound] = useState(false);
+      const [axiosError, setAxiosError] = useState(false);
+      const [errorMessage, setErrorMessage] = useState(null);
+
   
       useEffect(() => {
         async function getCountryInfo() {
           // get the lists of items from the memu api and set them as state variable
+            // country = "Foobar"; // for testing nonexistent country response.
             try{
             await axios.get(`${BASE_API_URL}/${country}${API_ARGS}`).then(res =>{ 
                 const countryInfo = new CountryInfo(res.data);
@@ -31,10 +35,35 @@ const DisplayCountry = ({country}) =>
             catch(error)
             {
                 setNotFound(true);
+                setAxiosError(true);
+                
+                //setErrorMessage(error['response'].data.errorMessage);
+                //if (error['response'].data.status === 404)
+                if (error['code'] === "ERR_BAD_REQUEST")
+                {
+                    let errorStatusCode = error['response'].data.status;
+                    if (errorStatusCode === 404)
+                    {
+                        setErrorMessage("Country not Found");
+                    }
+                    else
+                    {
+                        setErrorMessage(error['message']);
+                    }
+                    
+                }
+                else
+                {
+                    setErrorMessage(error['message']);
+                }
+                
+                
+              
                 console.log('Error');
+                
                 return (
                     <h1>Country not found</h1>
-                )
+                );
             }
         
     }   
@@ -87,7 +116,7 @@ const DisplayCountry = ({country}) =>
     
         )
     }
-    else if (!notFound)
+    else if (!notFound && !axiosError)
     {
         return (
             <h1>Loading....</h1>
@@ -97,8 +126,8 @@ const DisplayCountry = ({country}) =>
     {
         return(
             <>
-            <h1>Country <i>{country}</i> not found.</h1>
-            <a href="/" class="btn btn-primary">Search another country</a>
+            <h1>Error loading information for <i>{country}</i>:<b> {errorMessage}.</b></h1>
+            <a href="/" class="btn btn-primary">Search again</a>
             </>
         )
     }
