@@ -116,7 +116,7 @@ const DisplayCountry = ({country}) =>
     
         )
     }
-    else if (!notFound && !axiosError)
+    else if (!notFound /* && !axiosError */)
     {
         return (
             <h1>Loading....</h1>
