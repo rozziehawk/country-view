@@ -1,4 +1,15 @@
 # Getting Started with Create React App
+This app is called "country-view." It can be run from https://master--storied-sundae-3bae89.netlify.app/
+The source can be found at (https://github.com/rozziehawk/country-view/)
+it uses the api (https://restcountries.com/v3.1) which takes the name of the country (either the common name or the "official" name) and returns a block of data containing information about that country. 
+
+What this web app does: It allows a user to select a country from a dropdown list of all of the world's countries and display a page worth of general information about the country. THe information starts with a visual representation of the flag of that country, then lists geographic information about the country's location, then (if applicable), the coutnry's capital, languages spoken, the currency used, including its abbreviation and symbol (for example, in the case of the United States, it would display "(USD) United States dollar ($)") and lastly, the country's population (all data obtained from the REST Countries API). 
+
+The data is parsed into fields and displayed on the Display screen, with the flag of the selected country at the top (the URL of which is also obtained from the API). Population number is parsed to add commas in appropriate places to make the number more readable (for example US Population returned from the API is "329484123" which is parsed to read 
+"329,484,123").
+The country name is obtained using a library called country-list which assists in building a drop-down list of all of the world's countries. The app the dropdown was customized with some data manipulation on the list to make sure the country name jibed with the names of the restcountries API.
+The app uses the following resources: React, create-react-app, bootstrap (5.3), REST Countries API, country-list (for coutnries dropdown) and Axios.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

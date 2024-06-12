@@ -6,7 +6,7 @@ import axios from "axios";
 import CountryInfo from './CountryInfo';
 import './DisplayCountry.css';
 
-const BASE_API_URL = "https://restcountries.com/v3.1/name/";
+const BASE_API_URL = "https://restcountries.com/v3.1/name";
 const API_ARGS = "?fullText=true";
 const CARD_WIDTH = 400;
 
